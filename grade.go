@@ -1,28 +1,35 @@
 package main
+
 import "fmt"
-func main(){
-	grade :=map[string]int{
-		"Najim":95,
-		"Suhail":91,
-		"Muzzamil":90,
-		"Farseen":85,
 
-	}
-	fmt.Println("Initial Grades :", grade)
-
-	grade["Suhail"] = 88
-
-	grade["Midulaj"] = 75
-
-	fmt.Println("Update Grades:", grade)
+func main() {
 	
-	student := "Njaim"
-	fmt.Println(student+ " 'S Grades:",grade[student])
+	grades := map[string]int{
+		"Najim":     95,
+		"Suhail":    91,
+		"Muzzamil":  90,
+		"Farseen":   85,
+	}
 
-	student = " Abdul sathar "
-	if _,exists :=grade[student];exists{
-		grade[student] = 90
-	}else{
-		fmt.Println(student,"Not found in the records.")
+	
+	fmt.Println("Initial Grades:", grades)
+
+	
+	grades["Suhail"] = 88
+
+	grades["Midulaj"] = 75
+
+
+	fmt.Println("Updated Grades:", grades)
+
+	
+	student := "Najim"
+	fmt.Printf("%s's Grade: %d\n", student, grades[student])
+
+	student = "Abdul Sathar"
+	if _, exists := grades[student]; exists {
+		grades[student] = 90 
+	} else {
+		fmt.Println(student, "not found in the records.")
 	}
 }
